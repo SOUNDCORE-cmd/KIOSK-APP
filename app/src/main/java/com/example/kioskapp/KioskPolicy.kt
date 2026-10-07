@@ -60,9 +60,8 @@ class KioskPolicy(context: Context) {
      */
     fun disableFactoryReset() {
         if (!isDeviceOwner) return
-        dpm.setFactoryResetDisabled(admin, true)
+        dpm.addUserRestriction(admin, UserManager.DISALLOW_FACTORY_RESET)
     }
-
     /**
      * חוסם כניסה ל-Safe Mode. זו נקודת העקיפה הכי נפוצה לקיוסקים (Safe Mode מכבה
      * את כל אפליקציות הצד השלישי, כולל את אפליקציית הקיוסק עצמה, ומחזיר גישה מלאה
